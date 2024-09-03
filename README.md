@@ -6,7 +6,7 @@
 
 ## Notion 
 
-Open [https://www.notion.so/Vetolib-b6f9284ea77e408bb116458f21d9d434?pvs=4](Notion) to access the development site.
+Open [Notion](https://www.notion.so/Vetolib-b6f9284ea77e408bb116458f21d9d434?pvs=4) to access the development site.
 
 
 # run the development server:
