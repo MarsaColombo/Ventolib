@@ -48,9 +48,9 @@ class Animal
     #[ORM\Column(type: "datetime")]
     private $createdAt;
 
-    #[ORM\ManyToOne(targetEntity: "App\Entity\Owner")]
+    #[ORM\ManyToOne(targetEntity: "App\Entity\User")]
     #[ORM\JoinColumn(nullable: false)]
-    private $owner;
+    private $user;
 
     // Getters and Setters
 
@@ -191,15 +191,14 @@ class Animal
         return $this;
     }
 
-    //Connect the animal to the owner entity
-    public function getOwner(): ?Owner
+    public function getUser(): ?User
     {
-        return $this->owner;
+        return $this->user;
     }
 
-    public function setOwner(?Owner $owner): self
+    public function setUser(?User $user): self
     {
-        $this->owner = $owner;
+        $this->user = $user;
         return $this;
     }
 
