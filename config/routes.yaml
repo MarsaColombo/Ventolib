@@ -1,5 +1,64 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+# Route pour le HomePage
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+# Routes pour le Auth
+
+auth:
+  resource:
+    path: ../src/Controller/SecurityController.php
+    namespace: App\Controller
+  type: attribute
+
+# Routes pour l'admin du site
+
+admin:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+  prefix: "/admin"
+
+# Routes pour le vétérinaire
+
+vet:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+  prefix: "/vet"
+
+# Routes pour les clients (user)
+
+user:
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+  prefix: "/user"
+
+# Routes communes
+animal:
+  resource:
+    path: ../src/Controller/AnimalController.php
+    namespace: App\Controller
+  type: attribute
+
+consultation:
+  resource:
+    path: ../src/Controller/ConsultationController.php
+    namespace: App\Controller
+  type: attribute
+
+annotation:
+  resource:
+    path: ../src/Controller/AnnotationController.php
+    namespace: App\Controller
+  type: attribute
