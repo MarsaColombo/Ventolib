@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Animal;
-use App\Entity\Owner;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -37,8 +37,8 @@ class AnimalType extends AbstractType
             ->add('createdAt', null, [
                 'widget' => 'single_text',
             ])
-            ->add('owner', EntityType::class, [
-                'class' => Owner::class,
+            ->add('user', EntityType::class, [
+                'class' => User::class,
                 'choice_label' => 'id',
             ])
         ;
