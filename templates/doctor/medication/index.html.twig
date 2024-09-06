@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medication index{% endblock %}
+
+{% block body %}
+    <h1>Medication index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>NextReminder</th>
+                <th>Status</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for medication in medications %}
+            <tr>
+                <td>{{ medication.id }}</td>
+                <td>{{ medication.name }}</td>
+                <td>{{ medication.date }}</td>
+                <td>{{ medication.nextReminder }}</td>
+                <td>{{ medication.status }}</td>
+                <td>{{ medication.createdAt ? medication.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_medication_show', {'id': medication.id}) }}">show</a>
+                    <a href="{{ path('app_medication_edit', {'id': medication.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_medication_new') }}">Create new</a>
+{% endblock %}
